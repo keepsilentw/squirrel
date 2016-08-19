@@ -1,0 +1,244 @@
+@mixin common($attr, $value...) {
+    -moz-#{$attr}: $value;
+    -webkit-#{$attr}: $value;
+    #{$attr}: $value;
+}
+@mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+%word {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+%text-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+%text-overflow-line2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/* loading-rect */
+#rect {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5000;
+    background: $l-blue;
+    ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 60px;
+        margin: -30px 0 0 -30px;
+        text-align: center;
+        font-size: 2rem;
+        li {
+            background: $white;
+            height: 100%;
+            width: 6px;
+            margin-right: 5px;
+            display: inline-block;
+            @include common(animation, rect 1.2s infinite ease-in-out);
+            &:nth-child(2) {
+                @include common(animation-delay, -1.1s);
+            }
+            &:nth-child(3) {
+                @include common(animation-delay, -1.0s);
+            }
+            &:nth-child(4) {
+                @include common(animation-delay, -0.9s);
+            }
+        }
+        @at-root {
+            @-moz-keyframes rect {
+                0%, 40%, 100% { -moz-transform: scaleY(0.5) }
+                20% { -moz-transform: scaleY(1.0) }
+            }
+            @-webkit-keyframes rect {
+                0%, 40%, 100% { -webkit-transform: scaleY(0.5) }
+                20% { -webkit-transform: scaleY(1.0) }
+            }
+            @keyframes rect {
+                0%, 40%, 100% { transform: scaleY(0.5) }
+                20% { transform: scaleY(1.0) }
+            }
+        }
+    }
+}
+<div id="rect">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+/* loading-win */
+#loader{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    background: $l-blue;
+    ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 64px;
+        height: 64px;
+        margin: -32px 0 0 -32px;
+        li {
+            position: absolute;
+            opacity: 0;
+            width: 64px;
+            height: 64px;
+            @include common(transform, rotate(225deg));
+            @include common(animation, win 5.28s infinite);
+            &:after {
+                content: "";
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: $white;
+            }
+            &:nth-child(2) {
+                @include common(animation-delay, .23s);
+            }
+            &:nth-child(3) {
+                @include common(animation-delay, .46s);
+            }
+            &:nth-child(4) {
+                @include common(animation-delay, .69s);
+            }
+            &:nth-child(5) {
+                @include common(animation-delay, .92s);
+            }
+        }
+        @at-root {
+            @-moz-keyframes win {
+                0% {
+                    -webkit-transform: rotate(225deg);
+                    opacity: 1;
+                    -webkit-animation-timing-function: ease-out;
+                }
+                8% {
+                    -webkit-transform: rotate(345deg);
+                    -webkit-animation-timing-function: linear;
+                }
+                30% {
+                    -webkit-transform: rotate(455deg);
+                    -webkit-animation-timing-function: ease-in-out;
+                }
+                40% {
+                    -webkit-transform: rotate(690deg);
+                    -webkit-animation-timing-function: linear;
+                }
+                60% {
+                    -webkit-transform: rotate(815deg);
+                    opacity: 1;
+                    -webkit-animation-timing-function: ease-out;
+                }
+                75% {
+                    -webkit-transform: rotate(965deg);
+                    -webkit-animation-timing-function: ease-out;
+                }
+                76% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            @-webkit-keyframes win {
+                0% {
+                    -webkit-transform: rotate(225deg);
+                    opacity: 1;
+                    -webkit-animation-timing-function: ease-out;
+                }
+                8% {
+                    -webkit-transform: rotate(345deg);
+                    -webkit-animation-timing-function: linear;
+                }
+                30% {
+                    -webkit-transform: rotate(455deg);
+                    -webkit-animation-timing-function: ease-in-out;
+                }
+                40% {
+                    -webkit-transform: rotate(690deg);
+                    -webkit-animation-timing-function: linear;
+                }
+                60% {
+                    -webkit-transform: rotate(815deg);
+                    opacity: 1;
+                    -webkit-animation-timing-function: ease-out;
+                }
+                75% {
+                    -webkit-transform: rotate(965deg);
+                    -webkit-animation-timing-function: ease-out;
+                }
+                76% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+            @keyframes win {
+                0% {
+                    transform: rotate(225deg);
+                    opacity: 1;
+                    animation-timing-function: ease-out;
+                }
+                8% {
+                    transform: rotate(345deg);
+                    animation-timing-function: linear;
+                }
+                30% {
+                    transform: rotate(455deg);
+                    animation-timing-function: ease-in-out;
+                }
+                40% {
+                    transform: rotate(690deg);
+                    animation-timing-function: linear;
+                }
+                60% {
+                    transform: rotate(815deg);
+                    opacity: 1;
+                    animation-timing-function: ease-out;
+                }
+                75% {
+                    transform: rotate(965deg);
+                    animation-timing-function: ease-out;
+                }
+                76% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+<div id="loader">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>

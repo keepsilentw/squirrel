@@ -1,0 +1,25 @@
+{
+  "name": "talaris-team-web",
+  "description": "gulp components",
+  "repository": "http://git.elenet.me/LPD-Client/talaris-team-web.git",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.0",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^3.2.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-open": "^2.0.0",
+    "gulp-rev": "^7.0.0",
+    "gulp-rename": "~1.2.0",
+    "gulp-rimraf": "~0.2.0",
+    "gulp-sass": "^2.3.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.0",
+    "gulp-usemin": "^0.3.0",
+    "run-sequence": "^1.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
