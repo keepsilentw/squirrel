@@ -1,8 +1,5 @@
 {
-  "name": "talaris-team-web",
-  "description": "gulp components",
-  "repository": "http://git.elenet.me/LPD-Client/talaris-team-web.git",
-  "license": "MIT",
+  "description": "useful gulp kits",
   "devDependencies": {
     "browserify": "^13.0.0",
     "gulp": "^3.9.0",
@@ -10,6 +7,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-connect": "^3.2.0",
     "gulp-csso": "^2.0.0",
+    "gulp-html-replace": "^1.6.1",
     "gulp-open": "^2.0.0",
     "gulp-rev": "^7.0.0",
     "gulp-rename": "~1.2.0",

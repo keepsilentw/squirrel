@@ -1,3 +1,8 @@
+$b1: #333;
+$f3: #f3f3f3;
+$white: #fff;
+$black: #000;
+
 @mixin common($attr, $value...) {
     -moz-#{$attr}: $value;
     -webkit-#{$attr}: $value;
