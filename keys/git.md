@@ -11,6 +11,7 @@
 ##push
 	- 查看状态            git status
 	- 添加文件            git add . / *.js / sample.js
+	- 撤销文件修改		 git checkout * / *.js
 	- 提交修改            git commit -m "" (-a)
 	- 撤销修改            git checkout head . / *.js / sample.js
 	- 查看历史            git log (-n)
@@ -22,8 +23,9 @@
 	- 缓存修改            git stash
 	- 查看缓存            git stash list
 	- 删除缓存            git stash clear
-	- 获取缓存            git stash pop / apply
+	- 获取缓存            git stash pop/apply，pop会把stash从list中移除，apply不会
 	- 获取指定缓存         git stash apply stash@{1}
+	- 删除指定缓存		 git stash drop stash@{1}
 
 ##pull
 	- 获取远程分支         git pull origin "branch"
@@ -47,3 +49,6 @@
      1.git add .
      2.git commit --amend
      3.git push origin -f
+    - 查看远程源			git remote -v
+    - 添加远程源			git remote add upstream URL
+    - 获取、合并远程源		git fetch upstream, git merge upstream/master
