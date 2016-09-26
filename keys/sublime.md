@@ -1,11 +1,11 @@
 #sublime-keys
 
-`
+```
 ⌘: command
 ⌥: option/alt
 ⇧: shift
 ⌃: control
-`
+```
 
 ##打开/前往
 
