@@ -16,7 +16,7 @@
     - `git config --global alias.ss stash`
 
 * git rebase —> git rb
-    - `git config —global alias.rb rebase`
+    - `git config --global alias.rb rebase`
 
 * git last --> git log -1
     - `git config --global alias.last 'log -1'`
